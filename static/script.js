@@ -11,7 +11,7 @@ document.getElementById('timezoneForm').addEventListener('submit', function(even
         const taipeiOptions = { timeZone: 'Asia/Taipei', hour12: false, hour: "numeric", minute: "numeric"};
         const specifiedOptions = { timeZone: toZone, hour12: false, hour: "numeric", minute: "numeric"};
 
-        // 取得台北時間和指定時區時間
+        // 取得來源時間和指定時區時間
         const taipeiTime = new Intl.DateTimeFormat('zh-TW', taipeiOptions).format(date);
         const specifiedTime = new Intl.DateTimeFormat('en-GB', specifiedOptions).format(date);
 
@@ -20,7 +20,7 @@ document.getElementById('timezoneForm').addEventListener('submit', function(even
         updateClock(date, toZone, 'specifiedHour', 'specifiedMinute');
 
         // 顯示字串時間
-        document.getElementById('taipeiTimeString').textContent = `台北時間: ${taipeiTime}`;
+        document.getElementById('taipeiTimeString').textContent = `來源時間: ${taipeiTime}`;
         document.getElementById('specifiedTimeString').textContent = `指定時區時間: ${specifiedTime}`;
     }
 });
