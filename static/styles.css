@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+.clock-container {
+    display: inline-block;
+    margin: 20px;
+}
+
+.clock {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border: 8px solid black;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+
+.hand {
+    position: absolute;
+    background-color: black;
+    top: 30%; /* 確保指針的基點位於時鐘中心 */
+    left: 50%;
+    transform-origin: bottom center; /* 旋轉基點設置為指針的底部中心 */
+    transition: transform 0.5s ease-in-out; /* 平滑旋轉效果 */
+}
+
+.hour {
+    width: 6px;
+    height: 3em;
+    background-color: blue;
+}
+
+.minute {
+    width: 5px;
+    height: 3em;
+    background-color: green;
+}
+
+.second {
+    width: 2px;
+    height: 65px;
+    background-color: red;
+}
+
+#taipeiTimeString, #specifiedTimeString {
+    margin-top: 10px;
+    font-size: 1.2em;
+}

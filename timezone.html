@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計算時區</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>時區轉換工具</h1>
+        <form id="timezoneForm">
+            <label for="time">輸入時間 (YYYY-MM-DDTHH:MM):</label><br>
+            <input type="datetime-local" id="time" required><br><br>
+            
+            <label for="fromZone">從時區:</label><br>
+            <select id="fromZone" required>
+                <option value="Asia/Taipei">台北 (Asia/Taipei)</option>
+            </select><br><br>
+
+            <label for="toZone">轉換到時區:</label><br>
+            <select id="toZone" required>
+                <option value="Asia/Tokyo">東京 (Asia/Tokyo)</option>
+                <option value="Asia/Seoul">首爾 (Asia/Seoul)</option>
+                <option value="Asia/Shanghai">北京 (Asia/Shanghai)</option>
+                <option value="America/Los_Angeles">洛杉磯 (America/Los_Angeles)</option>
+                <option value="America/New_York">紐約 (America/New_York)</option>
+                <option value="Europe/Berlin">柏林 (Europe/Berlin)</option>
+                <option value="Europe/Paris">巴黎 (Europe/Paris)</option>
+                <option value="Europe/London">倫敦 (Europe/London)</option>
+                <option value="Pacific/Honolulu">夏威夷 (Pacific/Honolulu)</option>
+                <option value="Asia/Ho_Chi_Minh">越南 (Asia/Ho_Chi_Minh)</option>
+                <option value="Asia/Bangkok">泰國 (Asia/Bangkok)</option>
+                <option value="Asia/Singapore">新加坡 (Asia/Singapore)</option>
+                <option value="Asia/Kuala_Lumpur">吉隆坡 (Asia/Kuala_Lumpur)</option>
+                <option value="Australia/Sydney">澳洲 (Australia/Sydney)</option>
+                <option value="Europe/Moscow">莫斯科 (Europe/Moscow)</option>
+            </select><br><br>
+
+            <button type="submit">計算</button>
+        </form>
+
+        <div id="clocks">
+            <div class="clock-container">
+                <h2>台北時間</h2>
+                <div class="clock" id="taipeiClock">
+                    <div class="hand hour" id="taipeiHour"></div>
+                    <div class="hand minute" id="taipeiMinute"></div>
+                </div>
+                <p id="taipeiTimeString"></p>
+            </div>
+
+            <div class="clock-container">
+                <h2>指定時區時間</h2>
+                <div class="clock" id="specifiedClock">
+                    <div class="hand hour" id="specifiedHour"></div>
+                    <div class="hand minute" id="specifiedMinute"></div>
+                </div>
+                <p id="specifiedTimeString"></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="static/script.js"></script>
+</body>
+</html>
